@@ -7,7 +7,7 @@ Created on Thu Jun 13 19:18:01 2024
 
 import numpy as np
 from statistics import mode
-from metropolis import cw_metropolis
+from .metropolis import cw_metropolis
 
 
 for i in np.arange(10,100,10):
