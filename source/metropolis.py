@@ -43,7 +43,7 @@ def initialize_hamiltonian(pareto, alpha, beta, cw, n_int, dim):
 
 
 
-def cw_metropolis(pareto, alpha, beta, N, dim, steps):
+def cw_metropolis(pareto, alpha, beta, N, dim, steps, save=False):
     """
     Perform the Metropolis algorithm for a given system configuration.
 
@@ -107,6 +107,6 @@ def cw_metropolis(pareto, alpha, beta, N, dim, steps):
 # Postprocessing 
 # =============================================================================
     mag_plot(mag_density_array, burn_in, steps, beta, alpha, 
-             mag_density_init, pareto, save=False)
+             mag_density_init, pareto, save=save)
     
     return cw, mag_density_array, burn_in, steps, xi
