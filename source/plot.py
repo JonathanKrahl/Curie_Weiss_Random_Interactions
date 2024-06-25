@@ -4,11 +4,16 @@ Created on Thu Jun 13 19:43:29 2024
 
 @author: jonak
 """
-
+import sys
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 from statistics import mode
-from utils import save_plot
+# Add the parent directory to the sys.path
+# This allows importing modules from the parent directory
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.append(parent_dir)
+from source.utils import save_plot
 
 def mag_plot(mag_d_array, burn_in, steps, beta, alpha, mag_d_init, pareto, save=False, average=False):
     """
