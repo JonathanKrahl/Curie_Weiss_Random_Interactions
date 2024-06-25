@@ -54,3 +54,28 @@ def symmetrize(matrix):
     sym_mat = matrix - np.tril(matrix, -1) + np.triu(matrix, 1).T
     
     return sym_mat
+
+def print_hamiltonian(cw, Xi, dim, n):
+    """
+    Calculate and return the Hamiltonian values for a given configuration.
+    
+    Parameters:
+    cw (ndarray): Array of spin values.
+    Xi (ndarray): 2D array of interaction values between spins.
+    dim (int): Dimension of the grid.
+    n (int): Total number of spins in the grid.
+    
+    Returns:
+    ndarray: Array of Hamiltonian values for each spin.
+    """
+    
+    # Initialize the Hamiltonian array with zeros
+    ham = np.zeros(len(cw))
+    
+    # Loop over each spin to calculate its Hamiltonian contribution
+    for i in range(len(ham)):
+        # Calculate the Hamiltonian for spin i using the given formula
+        ham[i] = 4 * dim / n * cw[i] * np.matmul(Xi[i, :], cw)
+    
+    # Return the array of Hamiltonian values
+    return ham
