@@ -4,11 +4,16 @@ Created on Thu Jun 13 19:46:02 2024
 
 @author: jonak
 """
-
+import sys
+import os
 import numpy as np
-from initialize import initialize_geometry
-from utils import symmetrize
-from plot import mag_plot
+# Add the parent directory to the sys.path
+# This allows importing modules from the parent directory
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.append(parent_dir)
+from source.initialize import initialize_geometry
+from source.utils import symmetrize
+from source.plot import mag_plot
 
 
 
